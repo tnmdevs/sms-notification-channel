@@ -39,7 +39,7 @@ class SMSNotification extends Notification
 ```php
 use TNM\SMSNotification\Notifications\SMSNotification;
 
-Notification::send($user, new SMSNotification($message));
+Notification::send($user, new SMSNotification('This is a sample notification'));
 ```
 ## Configuration
 
@@ -51,7 +51,7 @@ php artisan vendor:publish --provider="TNM\SMSNotification\ChannelServiceProvide
 ## Messenger URL
 
 You can change the messenger URL either by editing the config directly or by adding an `.env` entry 
-`SMS_NOTIFICATION_MESSENGER_URL=http://your-messanger-api`
+`SMS_NOTIFICATION_MESSENGER_URL="http://your-messanger-api"`
 ```php
 'messenger_url' => env('SMS_NOTIFICATION_MESSENGER_URL', 'http://localohost'),
 ```
