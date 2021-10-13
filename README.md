@@ -40,3 +40,24 @@ use TNM\SMSNotification\Notifications\SampleNotification;
 
 Notification::send($user, new SampleNotification($message));
 ```
+## Configuration
+
+## Publishing the config
+The following command will publish a config file `config/sms_notification.php`
+```terminal
+php artisan vendor:publish --provider="TNM\SMSNotification\ChannelServiceProvider" --tag="config"
+```
+## Messenger URL
+
+You can change the messenger URL either by editing the config directly or by adding an `.env` entry 
+`SMS_NOTIFICATION_MESSENGER_URL=http://your-messanger-api`
+```php
+'messenger_url' => env('SMS_NOTIFICATION_MESSENGER_URL', 'http://localohost'),
+```
+
+## Notifiable Attribute
+By default, we look for the `phone_number` attribute on the notifiable entity. If your application has a different 
+attribute, change that in the config
+```php
+'notifiable_attribute' => 'msisdn'
+```
