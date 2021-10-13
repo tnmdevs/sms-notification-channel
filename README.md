@@ -14,7 +14,7 @@ namespace TNM\SMSNotification\Notifications;
 use Illuminate\Notifications\Notification;
 use TNM\SMSNotification\Channels\SMSChannel;
 
-class SampleNotification extends Notification
+class SMSNotification extends Notification
 {
     private string $message;
 
@@ -35,10 +35,11 @@ class SampleNotification extends Notification
 }
 ```
 ### Using the notification
-```php
-use TNM\SMSNotification\Notifications\SampleNotification;
 
-Notification::send($user, new SampleNotification($message));
+```php
+use TNM\SMSNotification\Notifications\SMSNotification;
+
+Notification::send($user, new SMSNotification($message));
 ```
 ## Configuration
 

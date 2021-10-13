@@ -5,7 +5,7 @@ namespace TNM\SMSNotification\Notifications;
 use Illuminate\Notifications\Notification;
 use TNM\SMSNotification\Channels\SMSChannel;
 
-class SampleNotification extends Notification
+class SMSNotification extends Notification
 {
     private string $message;
 
