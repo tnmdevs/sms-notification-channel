@@ -16,6 +16,13 @@ use TNM\SMSNotification\Channels\SMSChannel;
 
 class SampleNotification extends Notification
 {
+    private string $message;
+
+    public function __construct(string $message)
+    {
+        $this->message = $message;
+    }
+
     public function via($notifiable)
     {
         return [SMSChannel::class];
@@ -23,7 +30,7 @@ class SampleNotification extends Notification
 
     public function toSMS($notifiable): string
     {
-        return 'This is a sample notification';
+        return $this->message;
     }
 }
 ```
